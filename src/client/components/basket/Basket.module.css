@@ -1,0 +1,21 @@
+.UserInfo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:80px 0 10px 0;
+}
+.Name{
+    font-size:28px;
+    font-weight:bold;
+    color:#eeeae2;
+}
+.Info{
+    margin-left:34px;
+    color: rgba(238, 234, 226, 0.58);
+}
+.Line{
+    background-color:#aeaeae;
+    width:90%;
+    margin: 0 auto;
+    height:1px;
+}

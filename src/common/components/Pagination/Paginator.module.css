@@ -1,0 +1,15 @@
+.selectedNum {
+    font-weight: bold;
+    color: #e76e8b !important;
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+}
+
+.num {
+    margin: 3px;
+    font-size: 14px;
+    color:white;
+}

@@ -1,0 +1,17 @@
+.sidebarNav {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: 200;
+    color: #eeeae2;
+    border-bottom: 1px solid rgba(99, 95, 86, 0.57);
+    text-decoration: none;
+}
+
+.sidebarNav:hover {
+    color: #e76e8b;
+    background-color: #202020;
+    transition: 1s;
+}

@@ -1,0 +1,16 @@
+.main {
+    border-bottom: 1px solid #000;
+    opacity: 0.7;
+    height: 270px;
+    width: 100%;
+    background-image: url("https://media.roccat.org/img/products/Suora-FX/templates/Gallery-01-PIC-01-1.jpg");
+}
+
+.stripedText {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 45px;
+    text-transform: uppercase;
+    background: repeating-linear-gradient(transparent, transparent 2px, #a8657c 2px, #b15859 3px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

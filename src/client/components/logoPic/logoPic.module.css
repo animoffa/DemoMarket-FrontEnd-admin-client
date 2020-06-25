@@ -1,0 +1,60 @@
+.main {
+    border-bottom: 1px solid #000;
+    opacity: 0.7;
+    height: 270px;
+    width: 100%;
+    background-image: url("https://media.roccat.org/img/products/Suora-FX/templates/Gallery-01-PIC-01-1.jpg");
+}
+
+.stripedText {
+    font-family: 'Rubik One', sans-serif;
+    font-size: 45px;
+    text-transform: uppercase;
+    background: repeating-linear-gradient(transparent, transparent 2px, #a8657c 2px, #b15859 3px);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.search {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    right: 40px;
+    top: 280px;
+    width: 380px;
+    height: 60px;
+    background-color: #0b0b0b;
+    justify-content: center;
+    align-items: center;
+    border-radius:30px;
+    opacity: 0.8;
+}
+.InputSearch{
+    background-color: #202020;
+    border:none;
+    width:250px;
+    height:33px;
+    outline:none;
+    border-radius:5px;
+}
+.ButtonSearch{
+    background-color: transparent;
+    border: none;
+    height: 33px;
+    outline: none;
+}
+@media (max-width:1000px){
+    .search{
+        left: 50%;
+        margin-left: -190px;
+    }
+}
+@media (max-width:390px){
+    .search{
+      width: 240px;
+        margin-left:-120px;
+    }
+    .InputSearch{
+        width:180px;
+    }
+}

@@ -1,0 +1,27 @@
+.CategoriesMain {
+    padding:60px 40px;
+    width:92%;
+}
+.title{
+    color: #eeeae2;
+    font-weight:bold;
+}
+.Categories{
+    margin-top:40px;
+}
+.editText{
+    display: flex;
+    justify-content: center;
+    margin-top:25px;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width:1000px){
+    .CategoriesMain{
+        padding:0;
+        width:100%;
+    }
+}

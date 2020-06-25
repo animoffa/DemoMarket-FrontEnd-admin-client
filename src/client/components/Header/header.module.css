@@ -1,0 +1,48 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #202020;
+    border-bottom: 1px solid #aeaeae;
+    padding: 5px;
+}
+
+.Header * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7px;
+    color: #aeaeae;
+}
+
+.phoneNumberPinkColor {
+    color: #e76e8b;
+}
+
+.HeaderNavigation {
+    margin-left: 30px;
+    cursor: pointer;
+}
+.HeaderNavigation *:hover{
+    color: #e76e8b;
+}
+.subMenu {
+    display: none;
+}
+
+@media (max-width: 950px) {
+    .HeaderphoneNumber * {
+        display: none;
+    }
+
+    .HeaderNavigation {
+        margin-left: 10px;
+    }
+    .HeaderphoneNumber img{
+display:initial;
+    }
+}
+@media (max-width:580px){
+    .HeaderNavigation{
+        display: none;
+    }
+}
