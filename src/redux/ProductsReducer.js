@@ -13,7 +13,7 @@ let initialState = {
     products: [],
     productsCount: 0,
     currentPage: 1,
-    pageSize: 10,
+    pageSize: 12,
     name: null,
     description: null,
     price: null,
@@ -23,6 +23,7 @@ let initialState = {
     producer: null,
     category: null,
     id: null,
+    photos:[],
 };
 
 const ProductsReducer = (state = initialState, action) => {
@@ -43,7 +44,8 @@ const ProductsReducer = (state = initialState, action) => {
                 wireless: action.product.wireless,
                 backlight: action.product.backlight,
                 producer: action.product.producer,
-                category: action.product.category
+                category: action.product.category,
+                photos:action.product.photos,
             };
         case SET_PRODUCT:
             return {
@@ -56,8 +58,7 @@ const ProductsReducer = (state = initialState, action) => {
                 wireless: action.id.wireless,
                 backlight: action.id.backlight,
                 producer: action.id.producer,
-                category: action.id.category
-
+                category: action.id.category,
             };
         case UNMOUNT_PRODUCT:
             return {
@@ -71,6 +72,7 @@ const ProductsReducer = (state = initialState, action) => {
                 producer: null,
                 category: null,
                 id: null,
+                photos:null
 
             };
         case DELETE_PRODUCT:

@@ -5,13 +5,14 @@
     color: #eeeae2;
     font-weight:bold;
 }
-.Categories{
+.Products{
     margin-top:50px;
     display:flex;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     justify-content: center;
 }
+
 @media (max-width:1000px){
     .CategoriesMain{
         padding:0;

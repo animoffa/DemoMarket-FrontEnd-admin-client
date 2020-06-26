@@ -1,5 +1,5 @@
 import React from 'react';
-import List from "../list/List";
+import List from "../../../common/components/list/List";
 import categoriesCss from "../CategoriesAdmin/Categories.module.css";
 
 let Orders = (props) => {
@@ -12,8 +12,8 @@ let Orders = (props) => {
                       StausOfOrder={"Статус"}/>
                 {
                     props.orders.map(p =>
-                        <List productName={p._id} key={p._id} Productscount={p.UserID} ProductsOfOrder={p.ProductsID}
-                              StausOfOrder={p.Status}/>
+                        <List productName={p._id} key={p._id} Productscount={p.userID} ProductsOfOrder={p.ProductsID}
+                              StausOfOrder={p.status}/>
                     )
                 }
             </div>

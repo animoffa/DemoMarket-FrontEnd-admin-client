@@ -1,0 +1,46 @@
+.MainText{
+    margin-left: 60px;
+}
+.MainPart *{
+    margin:10px;
+}
+.MainPart{
+    display: flex;
+    justify-content:center;
+    margin:80px 0 60px 0;
+}
+.Param{
+    font-size:23px;
+    font-weight:500;
+}
+.Values{
+    font-size:24px;
+    margin:60px 0;
+    color: #eeeae2;
+}
+.line{
+    width:90%;
+    background-color: rgba(238, 234, 226, 0.64);
+    height:1px;
+    margin: 0 auto;
+}
+.productMain{
+    color: #eeeae2;
+    font-size:28px;
+    font-weight:bold;
+}
+
+@media (max-width:650px){
+    .MainPart{
+        flex-direction: column;
+    }
+}
+@media (max-width:475px){
+    .BigWidth{
+        display:none;
+    }
+    .Img{
+        width:250px;
+    }
+
+}

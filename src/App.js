@@ -7,7 +7,7 @@ import {
 } from "@acomponents";
 import {
     LogoPicClient, HeaderClient, SidebarClientContainer,
-    ProductsClientContainer,BasketContainer
+    ProductsClientContainer,BasketContainer,ProductContainer
 } from "@ccomponents";
 import './App.css';
 
@@ -47,8 +47,9 @@ function App() {
                         <Switch>
                             <Route exact path="/" render={() => <Redirect to={"/products"}/>}/>
                             <Route path='/orders' component={OrdersContainer}/>
-                            <Route path='/products/:ProductID?' component={ProductsClientContainer}/>
+                            <Route path='/products/:CategoryID?' component={ProductsClientContainer}/>
                             <Route path='/basket' component={BasketContainer}/>
+                            <Route path='/product/:ProductID?' component={ProductContainer}/>
                         </Switch>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import css from './Product.module.css';
 
 let Product = (props) => {
     return (
-        <div className={css.Main}>
+        <NavLink to={`/product/${props.id}`} className={css.Main}>
             <img src={props.photos?props.photos[0]:img} alt="фото клавиатуры" className={css.photo}/>
             <div className={css.name}>
                 { props.productName}
@@ -13,7 +13,7 @@ let Product = (props) => {
             <div>
               Цена: {props.price}
             </div>
-        </div>
+        </NavLink>
     )
 };
 export default Product;

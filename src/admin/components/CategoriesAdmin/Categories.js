@@ -1,5 +1,5 @@
 import React from 'react';
-import List from "../list/List";
+import List from "../../../common/components/list/List";
 import add from "../../../images/icons8-добавить-64.png"
 import categoriesCss from "./Categories.module.css";
 

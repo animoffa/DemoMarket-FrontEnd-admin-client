@@ -1,5 +1,5 @@
 import React from 'react';
-import List from "../list/List";
+import List from "../../../common/components/list/List";
 import categoriesCss from "../CategoriesAdmin/Categories.module.css";
 
 let Users = (props) => {

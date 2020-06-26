@@ -1,5 +1,5 @@
 import React from 'react';
-import List from "../list/List";
+import List from "../../../common/components/list/List";
 import ChangeText from "./ChangeText";
 import edit from "../../../images/icons8-редактировать-26.png";
 import categoriesCss from "../CategoriesAdmin/Categories.module.css";

@@ -8,6 +8,7 @@ let initialState = {
     mail:null,
     name:null,
     basket:[],
+    id:null,
 };
 
 const UsersReducer = (state = initialState, action) => {
@@ -22,7 +23,8 @@ const UsersReducer = (state = initialState, action) => {
                 ...state,
                mail: action.user.mail,
                 name:action.user.name,
-                basket: action.user.basket
+                basket: action.user.basket,
+                id:action.user._id,
 
             };
         default:
