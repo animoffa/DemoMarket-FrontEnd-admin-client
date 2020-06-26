@@ -4,6 +4,7 @@ import ProductsClientContainer from "../containers/ProductsContainer";
 import SidebarClientContainer from "../containers/sidebarClientContainer";
 import BasketContainer from "../containers/basketContainer";
 import ProductContainer from "../containers/productContainer";
+import AboutUs from "./AboutAndContacts/aboutUs"
 
 export {
     LogoPicClient,
@@ -11,5 +12,6 @@ export {
     ProductsClientContainer,
     SidebarClientContainer,
     BasketContainer,
-    ProductContainer
+    ProductContainer,
+    AboutUs
 };

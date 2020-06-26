@@ -7,7 +7,7 @@ import {
 } from "@acomponents";
 import {
     LogoPicClient, HeaderClient, SidebarClientContainer,
-    ProductsClientContainer,BasketContainer,ProductContainer
+    ProductsClientContainer,BasketContainer,ProductContainer,AboutUs
 } from "@ccomponents";
 import './App.css';
 
@@ -50,6 +50,7 @@ function App() {
                             <Route path='/products/:CategoryID?' component={ProductsClientContainer}/>
                             <Route path='/basket' component={BasketContainer}/>
                             <Route path='/product/:ProductID?' component={ProductContainer}/>
+                            <Route path='/about' component={AboutUs}/>
                         </Switch>
                     </div>
                 </div>

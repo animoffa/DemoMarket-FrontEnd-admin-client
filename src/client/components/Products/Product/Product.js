@@ -10,7 +10,7 @@ let Product = (props) => {
             <div className={css.name}>
                 { props.productName}
             </div>
-            <div>
+            <div className={css.Price}>
               Цена: {props.price}
             </div>
         </NavLink>

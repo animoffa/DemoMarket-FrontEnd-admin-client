@@ -22,9 +22,15 @@
     margin-left: 30px;
     cursor: pointer;
 }
-.HeaderNavigation *:hover{
+
+.HeaderNavigation * {
+    text-decoration: none;
+}
+
+.HeaderNavigation *:hover {
     color: #e76e8b;
 }
+
 .subMenu {
     display: none;
 }
@@ -37,12 +43,14 @@
     .HeaderNavigation {
         margin-left: 10px;
     }
-    .HeaderphoneNumber img{
-display:initial;
+
+    .HeaderphoneNumber img {
+        display: initial;
     }
 }
-@media (max-width:580px){
-    .HeaderNavigation{
+
+@media (max-width: 580px) {
+    .HeaderNavigation {
         display: none;
     }
 }

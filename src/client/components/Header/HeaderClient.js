@@ -16,7 +16,7 @@ let HeaderClient = () => {
                 </div>
                 <nav className={headerCss.HeaderNavigation}>
                     <NavLink to='/products'>Главная</NavLink>
-                    <div>О компании</div>
+                    <NavLink to={'/about'}>О компании</NavLink>
                     <div>Контакты</div>
                 </nav>
             </div>

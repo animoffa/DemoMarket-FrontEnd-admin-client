@@ -7,7 +7,7 @@ let Products = (props) => {
     const {CategoriesMain, title, Products} = ProductsCSS;
     return (<div className={CategoriesMain}>
         <div className={title}>
-            <h1 className={title}>Продукты</h1>
+            <h1>Продукты</h1>
         </div>
         <div>
             <div className={Products}>

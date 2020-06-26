@@ -1,14 +1,16 @@
 .Main{
-    background-color:#2e2d2d;
     color:white;
     display:flex;
     flex-direction: column;
     width:290px;
     margin:5px;
     padding:10px;
-    height:320px;
+    height:300px;
     justify-content:space-around;
     text-decoration:none;
+}
+.Main:hover{
+    background-color:#2e2d2d;
 }
 .photo{
    width:290px;
@@ -16,4 +18,8 @@
 }
 .name{
     font-size:18px;
+}
+.Price{
+    font-size:20px;
+    font-weight:bold;
 }
