@@ -3,7 +3,7 @@ import css from "./AboutUs.module.css"
 let AboutUsComponent =()=>{
     debugger
     return <div className={css.main}>
-        <div className={css.title}>О компании</div>
+        <h1 className={css.title}>О компании</h1>
         <div className={css.text}>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
             d tempor incididunt ut labore et dolore magna aliqua. Vestibulum lectu
