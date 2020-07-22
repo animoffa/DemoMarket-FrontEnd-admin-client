@@ -21,9 +21,12 @@ let ChangeProduct = (props) => {
                 <div>
                     <form onSubmit={props.handleSubmit}>
                         <ChangeForm product={props.state.product} UpdateProduct={props.UpdateProduct}
-                                    categories={props.state.categories} name={props.state.name} description={props.state.description}
-                                    price={props.state.price} color={props.state.color} wireless={props.state.wireless} backlight={props.state.backlight}
-                                    producer={props.state.producer} category={props.state.category} id={props.state.id}/>
+                                    categories={props.state.categories} name={props.state.name}
+                                    description={props.state.description}
+                                    price={props.state.price} color={props.state.color} wireless={props.state.wireless}
+                                    backlight={props.state.backlight}
+                                    producer={props.state.producer} category={props.state.category}
+                                    id={props.state.id}/>
                     </form>
                 </div>
             </div>

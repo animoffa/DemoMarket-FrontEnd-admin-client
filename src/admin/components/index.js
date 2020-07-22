@@ -1,23 +1,8 @@
-import CategoriesContainer from "../containers/CategoriesContainer";
-import ChangeCategoryContainer from "../containers/ChangeCategoryContainer";
-import ChangeProductContainer from "../containers/ChangeProductContainer";
-import Header from "./Header/header";
-import List from "../../common/components/list/List";
-import LogoPic from "./logoPic/logoPic";
-import OrdersContainer from "../containers/OrdersContainer";
-import ProductsContainer from "../containers/ProductsContainer";
-import Sidebar from "./Sidebar/sidebar";
-import UsersContainer from "../containers/UsersContainer";
-
-export {
-    CategoriesContainer,
-    ChangeCategoryContainer,
-    ChangeProductContainer,
-    Header,
-    List,
-    LogoPic,
-    OrdersContainer,
-    ProductsContainer,
-    Sidebar,
-    UsersContainer,
-};
+export {default as CategoriesContainer} from "../containers/CategoriesContainer";
+export {default as ChangeCategoryContainer} from "../containers/ChangeCategoryContainer";
+export {default as ChangeProductContainer} from "../containers/ChangeProductContainer";
+export {default as LogoPic} from "./logoPic/logoPic";
+export {default as OrdersContainer} from "../containers/OrdersContainer";
+export {default as ProductsContainer} from "../containers/ProductsContainer";
+export {default as Sidebar}from "./Sidebar/sidebar";
+export {default as UsersContainer} from "../containers/UsersContainer";

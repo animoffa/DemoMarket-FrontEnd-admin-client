@@ -22,16 +22,16 @@ class ProductContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        name: state.Products.name,
-        description: state.Products.description,
-        price: state.Products.price,
-        color: state.Products.color,
-        wireless: state.Products.wireless,
-        backlight: state.Products.backlight,
-        producer: state.Products.producer,
-        category: state.Products.category,
-        id: state.Products.id,
-        photos:state.Products.photos
+        name: state.products.name,
+        description: state.products.description,
+        price: state.products.price,
+        color: state.products.color,
+        wireless: state.products.wireless,
+        backlight: state.products.backlight,
+        producer: state.products.producer,
+        category: state.products.category,
+        id: state.products.id,
+        photos:state.products.photos
     }
 };
 

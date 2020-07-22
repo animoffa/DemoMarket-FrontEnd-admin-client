@@ -1,15 +1,17 @@
 import React from 'react';
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom"
 import {
-    Header, Sidebar, LogoPic,CategoriesContainer,
+    Sidebar, LogoPic, CategoriesContainer,
     ProductsContainer, UsersContainer, OrdersContainer,
     ChangeCategoryContainer, ChangeProductContainer
 } from "@acomponents";
 import {
-    LogoPicClient, HeaderClient, SidebarClientContainer,
-    ProductsClientContainer,BasketContainer,ProductContainer,AboutUs
+    LogoPicClient, SidebarClientContainer,
+    ProductsClientContainer, BasketContainer, ProductContainer, AboutUs
 } from "@ccomponents";
 import './App.css';
+import Login from "./common/auth/login/login";
+import Header from "./common/header/headerContainer";
 
 function App() {
     let isAdmin = false;
@@ -39,16 +41,17 @@ function App() {
     } else {
         return (<BrowserRouter>
             <div className="App">
-                <HeaderClient/>
+                <Header/>
                 <LogoPicClient/>
                 <div className="body">
                     <SidebarClientContainer/>
                     <div className="main__content">
                         <Switch>
-                            <Route exact path="/" render={() => <Redirect to={"/products"}/>}/>
+                            <Route exact path="/" render={() => <Redirect to={"/login"}/>}/>
                             <Route path='/orders' component={OrdersContainer}/>
                             <Route path='/products/:CategoryID?' component={ProductsClientContainer}/>
                             <Route path='/basket' component={BasketContainer}/>
+                            <Route path='/login' component={Login}/>
                             <Route path='/product/:ProductID?' component={ProductContainer}/>
                             <Route path='/about' component={AboutUs}/>
                         </Switch>

@@ -16,7 +16,7 @@ let Categories = (props) => {
                 <List categoryName={"Название категории"}/>
                 {
                     props.categories.map(c =>
-                        <List key={c._id} categoryName={c.name ? c.name :"-"} id={c._id}
+                        <List key={c._id} categoryName={c.name ? c.name : "-"} id={c._id}
                               delete={() => props.delete(c._id)}/>
                     )
                 }

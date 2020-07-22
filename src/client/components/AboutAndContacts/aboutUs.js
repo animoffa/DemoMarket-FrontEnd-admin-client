@@ -1,6 +1,6 @@
 import React from 'react';
 import css from "./AboutUs.module.css"
-let AboutUsComponent =()=>{
+let AboutUsComponent = () => {
     debugger
     return <div className={css.main}>
         <h1 className={css.title}>О компании</h1>

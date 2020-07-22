@@ -23,6 +23,7 @@ export const categoriesAPI = {
 
     }
 };
+
 export const productsAPI = {
     getProducts(currentPage,pageSize) {
         return axios.get(`http://localhost:3000/Products?pageNo=${currentPage}&size=${pageSize}`)
@@ -46,12 +47,42 @@ export const productsAPI = {
         return axios.post(`http://localhost:3000/Products/add`,{name:"Введите название"})
     }
 };
+
 export const usersAPI = {
     getUsers() {
         return axios.get("http://localhost:3000/Users")
     },
     getUserById(id) {
         return axios.get(`http://localhost:3000/Users/5eb7e8fd9f2d4624ac8103ef`)
+    }
+};
+
+export const authAPI={
+    register(user) {
+    return fetch('http://localhost:3000/auth/signup', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(user)
+    })
+        .then(res => res.json())
+},
+
+    login(email, password) {
+        return fetch('http://localhost:3000/auth/signin', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({email, password})
+        })
+            .then(res => res.json())
+            .then(res => {
+                if (res.success)
+                    localStorage.setItem('token', res.token)
+                return res
+            })
+    },
+
+    logout() {
+        localStorage.removeItem('token')
     }
 };
 

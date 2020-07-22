@@ -26,10 +26,10 @@ class ProductsContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        products: state.Products.products,
-        productsCount: state.Products.productsCount,
-        pageSize: state.Products.pageSize,
-        currentPage: state.Products.currentPage,
+        products: state.products.products,
+        productsCount: state.products.productsCount,
+        pageSize: state.products.pageSize,
+        currentPage: state.products.currentPage,
     }
 };
 

@@ -5,13 +5,17 @@ import Product from "@ccomponents/Products/Product/Product";
 import List from "../../../common/components/list/List";
 
 const Basket = (props) => {
-    let a=[];
-    let arrBasket=()=>{
-        a = props.products.filter(function(obj) { return props.basket.indexOf(obj._id) >= 0; });
+    let a = [];
+    let arrBasket = () => {
+        a = props.products.filter((obj) =>{
+            return props.basket.includes(obj._id) >= 0;
+        });
     };
-    let b=[];
-    let arrOrders=()=>{
-        b=props.orders.filter(function(obj) { return (props.id===obj.userID)? obj:null; });
+    let b = [];
+    let arrOrders = () => {
+        b = props.orders.filter((obj)=> {
+            return (props.id === obj.userID) ? obj : null;
+        });
     };
     arrOrders();
     arrBasket();
@@ -27,22 +31,24 @@ const Basket = (props) => {
         <div className={css.Basket}>
             <div>Корзина</div>
             <div className={css.Products}>
-            {
-                a.map(p=> <Product productName={p.name} key={p._id} price={p.price ? p.price : "-"} id={p._id}
-                                           delete={() => props.delete(p._id)} photos={p.photos}/> )
-            }
+                {
+                    a.map(p => <Product productName={p.name} key={p._id} price={p.price ? p.price : "-"} id={p._id}
+                                        delete={() => props.delete(p._id)} photos={p.photos}/>)
+                }
             </div>
             <div className={css.Line}/>
         </div>
         <div className={css.Orders}>
             <div>Заказы</div>
             <div className={css.list}>
-            <List categoryName={"ID Заказа"} Productscount={"Дата заказа"} ProductsOfOrder={"Кол-во продуктов"}
-                  StausOfOrder={"Статус"}/>
-           {
-                b.map(p=> <List productName={p._id.slice(0,-8)} key={p._id} Productscount={p.date.toString().slice(0,-14)} ProductsOfOrder={p.productsID.length}
-                                      StausOfOrder={p.status}/>)
-            }
+                <List categoryName={"ID Заказа"} Productscount={"Дата заказа"} ProductsOfOrder={"Кол-во продуктов"}
+                      StausOfOrder={"Статус"}/>
+                {
+                    b.map(p => <List productName={p._id} key={p._id}
+                                     Productscount={p.date.toString().slice(0, -14)}
+                                     ProductsOfOrder={p.productsID.length}
+                                     StausOfOrder={p.status}/>)
+                }
             </div>
         </div>
     </div>

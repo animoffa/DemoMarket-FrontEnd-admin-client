@@ -9,8 +9,9 @@ class CategoriesContainer extends React.Component {
     }
 
     render() {
-        return <Categories categories={this.props.categories} delete={this.props.deleteCategoryAPI}
-                        add={this.props.addCategoryAPI}/>
+        return <Categories categories={this.props.categories}
+                           delete={this.props.deleteCategoryAPI}
+                           add={this.props.addCategoryAPI}/>
     }
 }
 

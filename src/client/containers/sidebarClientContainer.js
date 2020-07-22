@@ -15,7 +15,7 @@ class SidebarContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        categories: state.Categories.categories
+        categories: state.categories.categories
     }
 };
 export default connect(mapStateToProps, {

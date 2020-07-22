@@ -1,13 +1,15 @@
-.text{
-    word-wrap:break-spaces;
-    width:90%;
-    margin:0 auto;
+.text {
+    word-wrap: break-spaces;
+    width: 90%;
+    margin: 0 auto;
 }
-.title{
-    font-weight:bold;
-    font-size:26px;
+
+.title {
+    font-weight: bold;
+    font-size: 26px;
     margin: 80px 0 60px 0;
 }
-.main{
+
+.main {
     color: #eeeae2;
 }

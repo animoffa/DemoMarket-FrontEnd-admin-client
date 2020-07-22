@@ -26,25 +26,29 @@
 .Basket, .Orders {
     color: #eeeae2;
     font-size: 24px;
-    font-weight:bold;
+    font-weight: bold;
     margin: 50px 0;
 }
-.Products{
+
+.Products {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 30px;
 }
+
 .list {
     margin-top: 30px;
-    font-size:20px;
-    font-weight:100;
+    font-size: 20px;
+    font-weight: 100;
 }
-@media (max-width:390px){
-    .UserInfo{
+
+@media (max-width: 390px) {
+    .UserInfo {
         flex-direction: column;
     }
-    .Info{
-        margin:0;
+
+    .Info {
+        margin: 0;
     }
 }

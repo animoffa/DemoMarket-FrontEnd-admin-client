@@ -10,7 +10,8 @@ let Users = (props) => {
                 <List productName={"Имя"} Productscount={"Заказы"} ProductsOfOrder={"Адрес"} StausOfOrder={"Имя"}/>
                 {
                     props.users.map(p=>
-                        <List productName={p._id} key={p._id} Productscount={p.Basket} ProductsOfOrder={p.Mail?p.Mail:"-"} StausOfOrder={p.Name}/>
+                        <List productName={p._id} key={p._id} Productscount={p.Basket}
+                              ProductsOfOrder={p.Mail?p.Mail:"-"} StausOfOrder={p.Name}/>
                     )
                 }
             </div>

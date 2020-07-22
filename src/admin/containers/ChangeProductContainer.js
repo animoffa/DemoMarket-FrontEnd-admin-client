@@ -7,6 +7,7 @@ import Preloader from "../../common/components/Preloader/Preloader";
 
 class ChangeProductContainer extends React.Component {
     componentDidMount() {
+        // TODO: REACT ROUTER SEE this.props.match AND withRouter
         let id = window.location.pathname.slice(14);
         this.props.getProductByIDAPI(id);
         this.props.getCategoriesAPI();
@@ -26,16 +27,16 @@ class ChangeProductContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        categories: state.Categories.categories,
-        name: state.Products.name,
-        description: state.Products.description,
-        price: state.Products.price,
-        color: state.Products.color,
-        wireless: state.Products.wireless,
-        backlight: state.Products.backlight,
-        producer: state.Products.producer,
-        category: state.Products.category,
-        id: state.Products.id,
+        categories: state.categories.categories,
+        name: state.products.name,
+        description: state.products.description,
+        price: state.products.price,
+        color: state.products.color,
+        wireless: state.products.wireless,
+        backlight: state.products.backlight,
+        producer: state.products.producer,
+        category: state.products.category,
+        id: state.products.id,
 
     }
 };

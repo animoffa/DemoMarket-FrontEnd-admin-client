@@ -25,9 +25,11 @@
 .subMenu {
     display: none;
 }
-.HeaderLi{
+
+.HeaderLi {
     display: none;
 }
+
 @media (max-width: 950px) {
     .HeaderphoneNumber * {
         display: none;
@@ -36,7 +38,8 @@
     .HeaderNavigation {
         margin-left: 10px;
     }
-    .HeaderphoneNumber img{
-display:initial;
+
+    .HeaderphoneNumber img {
+        display: initial;
     }
 }
