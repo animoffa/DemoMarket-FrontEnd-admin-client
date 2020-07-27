@@ -1,65 +1,54 @@
-import React from 'react';
-import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom"
-import {
-    Sidebar, LogoPic, CategoriesContainer,
-    ProductsContainer, UsersContainer, OrdersContainer,
-    ChangeCategoryContainer, ChangeProductContainer
-} from "@acomponents";
-import {
-    LogoPicClient, SidebarClientContainer,
-    ProductsClientContainer, BasketContainer, ProductContainer, AboutUs
-} from "@ccomponents";
-import './App.css';
-import Login from "./common/auth/login/login";
-import Header from "./common/header/headerContainer";
+import React, {Suspense} from 'react';
+import {Route, Switch} from 'react-router-dom'
+import {connect} from 'react-redux';
 
-function App() {
-    let isAdmin = false;
-    if (isAdmin) {
+import {Sidebar, LogoPic} from '@acomponents';
+import {LogoPicClient, SidebarClientContainer} from '@ccomponents';
+
+import Header from './common/containers/headerContainer';
+
+import {adminRoutes, shopRoutes} from './common/utilities/routes';
+import './App.css';
+
+class App extends React.Component {
+
+    renderRoutes(routes) {
+        return routes.map(({path, exact, component}, index) => {
+            return (
+                <Route path={path} exact={exact} component={component} key={index}/>
+            )
+        })
+    };
+
+    render() {
+        let {isAuth}=this.props;
         return (
-            <BrowserRouter>
-                <div className="App">
-                    <Header/>
-                    <LogoPic/>
-                    <div className="body">
-                        <Sidebar/>
-                        <div className="main__content">
-                            <Switch>
-                                <Route exact path="/" render={() => <Redirect to={"/categories"}/>}/>
-                                <Route path={'/users'} component={UsersContainer}/>
-                                <Route path='/orders' component={OrdersContainer}/>
-                                <Route path='/products' component={ProductsContainer}/>
-                                <Route path="/category/edit/:CategoryID?" render={() => <ChangeCategoryContainer/>}/>
-                                <Route path="/product/edit/:ProductID?" render={() => <ChangeProductContainer/>}/>
-                                <Route path='/categories' component={CategoriesContainer}/>
-                            </Switch>
-                        </div>
-                    </div>
-                </div>
-            </BrowserRouter>
-        );
-    } else {
-        return (<BrowserRouter>
-            <div className="App">
-                <Header/>
-                <LogoPicClient/>
-                <div className="body">
-                    <SidebarClientContainer/>
-                    <div className="main__content">
+            <div className='App'>
+                {isAuth && <Header/>}
+                {isAuth && (<Switch>
+                    <Route path='/admin' component={LogoPic}/>
+                    <Route path='/' component={LogoPicClient}/>
+                    </Switch>)}
+
+                <div className='body'>
+                    {isAuth && (
                         <Switch>
-                            <Route exact path="/" render={() => <Redirect to={"/login"}/>}/>
-                            <Route path='/orders' component={OrdersContainer}/>
-                            <Route path='/products/:CategoryID?' component={ProductsClientContainer}/>
-                            <Route path='/basket' component={BasketContainer}/>
-                            <Route path='/login' component={Login}/>
-                            <Route path='/product/:ProductID?' component={ProductContainer}/>
-                            <Route path='/about' component={AboutUs}/>
+                            <Route path='/admin' component={Sidebar}/>
+                            <Route path='/' component={SidebarClientContainer}/>
                         </Switch>
+                    )}
+                    <div className='main__content'>
+                        <Suspense fallback={<div>Spinner for loading a component</div>}>
+                            <Switch>
+                                {isAuth ?this.renderRoutes(adminRoutes): this.renderRoutes(shopRoutes.rest)}
+                                {isAuth ? this.renderRoutes(shopRoutes.loggedIn) : this.renderRoutes(shopRoutes.rest)}
+                            </Switch>
+                        </Suspense>
                     </div>
                 </div>
             </div>
-        </BrowserRouter>)
+        )
     }
 }
 
-export default App;
+export default connect(state => ({isAuth: state.auth.isAuth}), {})(App);

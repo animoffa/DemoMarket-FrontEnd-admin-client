@@ -1,15 +1,14 @@
-import React from 'react';
+import React from "react";
 import {connect} from "react-redux";
-import Basket from "../components/basket/Basket"
-import {getUserByID} from "@astore/UsersReducer";
-import {getProductsAPI} from "@astore/ProductsReducer";
-import {getOrdersAPI} from "@astore/OrdersReducer";
+import Basket from "@ccomponents/basket/basket"
+import {getUserByID} from "@astore/usersReducer";
+import {getProductsAPI} from "@astore/productsReducer";
+import {getOrdersAPI} from "@astore/ordersReducer";
 
-import Preloader from "../../common/components/Preloader/Preloader";
+import Preloader from "../../common/components/preloader/preloader";
 
 class BasketContainer extends React.Component {
     componentDidMount() {
-        this.props.getUserByID();
         this.props.getProductsAPI();
         this.props.getOrdersAPI();
     }
@@ -19,19 +18,17 @@ class BasketContainer extends React.Component {
             return <Preloader/>
         }
         const {basket,mail,name,products,orders,id}=this.props;
-        return <Basket mail={mail} name={name} basket={basket} products={products}
-                       orders={orders} id={id}/>
+        return <Basket mail={mail} name={name} basket={basket}
+                       products={products} orders={orders} id={id}/>
     }
 }
 
 let mapStateToProps = (state) => {
+    let {name,basket,id,mail}=state.auth.user;
     return {
-        name:state.Users.name,
-        basket:state.Users.basket,
-        mail:state.Users.mail,
-        products:state.Products.products,
-        orders:state.Orders.orders,
-        id:state.Users.id,
+        name, basket, mail,id,
+        products:state.products.products,
+        orders:state.orders.orders,
     }
 };
 

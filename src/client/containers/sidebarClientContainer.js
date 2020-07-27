@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import {connect} from "react-redux";
-import Sidebar from "@ccomponents/SidebarClient/sidebarClient";
-import {getCategories,getCategoriesAPI} from "../../redux/CategoriesReducer";
+import Sidebar from "@ccomponents/sidebarClient/sidebarClient";
+import {getCategories,getCategoriesAPI} from "../../common/redux/reducers/categoriesReducer";
 
 class SidebarContainer extends React.Component {
     componentDidMount() {
@@ -13,12 +13,7 @@ class SidebarContainer extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => {
-    return {
-        categories: state.categories.categories
-    }
-};
-export default connect(mapStateToProps, {
+export default connect(state=>({categories: state.categories.categories}), {
     getCategoriesAPI,
     getCategories,
 })(SidebarContainer);

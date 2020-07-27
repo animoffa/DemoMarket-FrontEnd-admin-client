@@ -1,5 +1,6 @@
 import * as axios from "axios";
 
+
 export const categoriesAPI = {
     getCategories() {
         return axios.get("http://localhost:3000/Categories")
@@ -15,17 +16,17 @@ export const categoriesAPI = {
             products: products
         });
     },
-    deleteCategory(id){
+    deleteCategory(id) {
         return axios.delete(`http://localhost:3000/Categories/${id}`)
     },
-    addCategory(){
-        return axios.post(`http://localhost:3000/Categories/add`,{name:"Введите название"})
+    addCategory() {
+        return axios.post(`http://localhost:3000/Categories/add`, {name: "Введите название"})
 
     }
 };
 
 export const productsAPI = {
-    getProducts(currentPage,pageSize) {
+    getProducts(currentPage, pageSize) {
         return axios.get(`http://localhost:3000/Products?pageNo=${currentPage}&size=${pageSize}`)
     },
     getProductById(id) {
@@ -40,11 +41,11 @@ export const productsAPI = {
             return response;
         })
     },
-    deleteProduct(id){
+    deleteProduct(id) {
         return axios.delete(`http://localhost:3000/Products/${id}`)
     },
-    addProduct(){
-        return axios.post(`http://localhost:3000/Products/add`,{name:"Введите название"})
+    addProduct() {
+        return axios.post(`http://localhost:3000/Products/add`, {name: "Введите название"})
     }
 };
 
@@ -57,15 +58,15 @@ export const usersAPI = {
     }
 };
 
-export const authAPI={
+export const authAPI = {
     register(user) {
-    return fetch('http://localhost:3000/auth/signup', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(user)
-    })
-        .then(res => res.json())
-},
+        return fetch('http://localhost:3000/auth/signup', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+    },
 
     login(email, password) {
         return fetch('http://localhost:3000/auth/signin', {

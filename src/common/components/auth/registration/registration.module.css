@@ -1,0 +1,40 @@
+.formSummaryError {
+    border: 1px solid red;
+    padding: 5px;
+    color: brown;
+    width: 30%;
+}
+
+.loginForm {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.remember {
+    margin: 5px;
+}
+.form *{
+    margin:6px;
+    font-size:19px;
+    color:#eeeae2;
+}
+.loginButton {
+    border-radius: 6px;
+    height: 38px;
+    width: 90px;
+    margin: 25px 0;
+    font-weight: bold;
+    background-color: rgb(231, 110, 139);
+    color:white;
+    border:none;
+    cursor: pointer;
+
+}
+
+@media (max-width: 800px) {
+    .loginForm {
+        margin-top: 60px;
+    }
+}

@@ -1,37 +1,30 @@
-import React from 'react';
-import Preloader from "../../common/components/Preloader/Preloader";
+import React from "react";
+import Preloader from "../../common/components/preloader/preloader";
 import {connect} from "react-redux";
-import {getProductByIDAPI} from "@astore/ProductsReducer";
-import Product from "@ccomponents/Product/Product";
+import {getProductByIDAPI} from "@astore/productsReducer";
+import Product from "@ccomponents/product/Product";
 
 class ProductContainer extends React.Component {
     componentDidMount() {
-        let id = window.location.pathname.slice(9);
-        this.props.getProductByIDAPI(id);
+        console.log(this.props.ProductID)
+        this.props.getProductByIDAPI(this.props.ProductID);
     }
 
     render() {
         if (!this.props.name) {
             return <Preloader/>
         }
-        const {name,description,price,color,wireless,backlight,producer,id,photos}=this.props;
+        const {name, description, price, color, wireless, backlight, producer, id, photos} = this.props;
         return <Product name={name} description={description} price={price} color={color} photos={photos}
                         wireless={wireless} backlight={backlight} producer={producer} id={id}/>
     }
 }
 
-let mapStateToProps = (state) => {
+let mapStateToProps = ({products: {name, description, price, color, wireless, backlight, producer, category, id, photos}}) => {
     return {
-        name: state.products.name,
-        description: state.products.description,
-        price: state.products.price,
-        color: state.products.color,
-        wireless: state.products.wireless,
-        backlight: state.products.backlight,
-        producer: state.products.producer,
-        category: state.products.category,
-        id: state.products.id,
-        photos:state.products.photos
+        name, description, price, color,
+        wireless, backlight, producer,
+        category, id, photos
     }
 };
 

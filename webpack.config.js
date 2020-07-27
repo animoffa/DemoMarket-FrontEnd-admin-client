@@ -2,6 +2,7 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path= require("path");
 
 module.exports = {
+    devtool: 'eval-source-map',
     module: {
         rules: [
             {
@@ -60,8 +61,10 @@ module.exports = {
     resolve: {
         alias: {
             "@acomponents": path.resolve(__dirname, 'src/admin/components'),
+            "@acontainers": path.resolve(__dirname, 'src/admin/containers'),
             "@ccomponents":path.resolve(__dirname, 'src/client/components'),
-            "@astore":path.resolve(__dirname, 'src/redux'),
+            "@ccontainers":path.resolve(__dirname, 'src/client/containers'),
+            "@astore":path.resolve(__dirname, 'src/common/redux/reducers'),
             "@apicomponents":path.resolve(__dirname, 'src/common/api/api'),
         }
     }

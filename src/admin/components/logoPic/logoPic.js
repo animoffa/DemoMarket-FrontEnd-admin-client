@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import logo from "../../../images/icons8-клавиатура-64.png"
-import picCss from './logoPic.module.css';
+import picCss from "./logoPic.module.css";
 
 let logoPic = () => {
     return (

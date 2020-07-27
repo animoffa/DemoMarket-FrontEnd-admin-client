@@ -1,8 +1,8 @@
-export {default as CategoriesContainer} from "../containers/CategoriesContainer";
-export {default as ChangeCategoryContainer} from "../containers/ChangeCategoryContainer";
-export {default as ChangeProductContainer} from "../containers/ChangeProductContainer";
+export {default as CategoriesContainer} from "@acontainers/categoriesContainer";
+export {default as ChangeCategoryContainer} from "@acontainers/changeCategoryContainer";
+export {default as ChangeProductContainer} from "@acontainers/changeProductContainer";
 export {default as LogoPic} from "./logoPic/logoPic";
-export {default as OrdersContainer} from "../containers/OrdersContainer";
-export {default as ProductsContainer} from "../containers/ProductsContainer";
-export {default as Sidebar}from "./Sidebar/sidebar";
-export {default as UsersContainer} from "../containers/UsersContainer";
+export {default as OrdersContainer} from "@acontainers/ordersContainer";
+export {default as ProductsContainer} from "@acontainers/productsContainer";
+export {default as Sidebar}from "./sidebar/sidebar";
+export {default as UsersContainer} from "@acontainers/usersContainer";
