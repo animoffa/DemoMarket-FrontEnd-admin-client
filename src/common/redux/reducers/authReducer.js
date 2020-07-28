@@ -21,7 +21,6 @@ export default (state = initialState, action) => {
                 inProgress: true
             }
         case LOGIN_SUCCESS:
-            console.log(action.user)
             return {
                 ...state,
                 inProgress: false,
@@ -59,11 +58,10 @@ const logout_success = () => ({type: LOGOUT})
 export const login = (email, password) => async dispatch => {
     dispatch(login_request());
     try {
-        const {name, mail, basket,id, success} = await authAPI.login(email, password)
+        const {name, mail, basket,id, success,isAdmin} = await authAPI.login(email, password)
         let user = {
-            name, basket, mail,id
+            name, basket, mail,id,isAdmin
         }
-        console.log(user)
         if (!success) {
             dispatch(login_failure())
             alert('Что-то пошло не так');

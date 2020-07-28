@@ -1,4 +1,3 @@
-export {default as BasketContainer} from "../containers/basketContainer";
 export {default as ProductContainer} from "../containers/productContainer";
 export {default as AboutUs} from "./aboutAndContacts/aboutUs"
 export {default as LogoPicClient} from "./logoPic/logoPicClient.js";

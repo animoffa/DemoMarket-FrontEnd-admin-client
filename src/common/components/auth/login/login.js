@@ -6,17 +6,25 @@ import {connect} from "react-redux";
 import {login} from "@astore/authReducer";
 import {NavLink, Redirect} from "react-router-dom";
 import s from "./login.module.css"
+import Preloader from "../../preloader/preloader";
 //TODO: сдедать посередине + рамка
 const Login = (props) => {
     const onSubmit = (formData) => {
         props.login(formData.mail, formData.password);
     };
-    console.log(props.isAuth)
+
     if (props.isAuth) {
-        return <Redirect to="/products"/>
+        if (props.isAdmin === undefined) {
+            return <Preloader/>
+        }
+        if (props.isAdmin === true) {
+            return <Redirect to="/admin/categories"/>
+        } else {
+            return <Redirect to="/products"/>
+        }
     }
     return <div className={s.loginForm}>
-        <h1 style={{color:"white"}}>Login</h1>
+        <h1 style={{color: "white"}}>Login</h1>
         <LoginReduxForm onSubmit={onSubmit}/>
         <NavLink to="/registration">Еще не зарегестрированы?</NavLink>
     </div>
@@ -31,7 +39,8 @@ const LoginForm = (props) => {
             </div>
             <div>
                 <span>Password</span>
-                <Field type="password" name="password" placeholder="password" validate={Validator.required} component={Input}/>
+                <Field type="password" name="password" placeholder="password" validate={Validator.required}
+                       component={Input}/>
             </div>
             {props.error && <div className={s.formSummaryError}>{props.error} </div>}
             <div className={s.remember}>
@@ -46,4 +55,8 @@ const LoginReduxForm = reduxForm({
     form: "login"
 })(LoginForm);
 
-export default connect(state=>({isAuth: state.auth.isAuth}), {login})(Login);
+let mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth,
+    isAdmin: state.auth.user.isAdmin
+})
+export default connect(mapStateToProps, {login})(Login);

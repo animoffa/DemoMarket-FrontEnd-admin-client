@@ -21,7 +21,17 @@ class App extends React.Component {
     };
 
     render() {
-        let {isAuth}=this.props;
+        let {isAuth, isAdmin}=this.props;
+
+        const checkAuthAndRender = () => {
+            if (isAuth && isAdmin) {
+                return this.renderRoutes(adminRoutes)
+            }
+            if (isAuth && !isAdmin) {
+                return this.renderRoutes(shopRoutes.loggedIn)
+            }
+        }
+
         return (
             <div className='App'>
                 {isAuth && <Header/>}
@@ -29,7 +39,6 @@ class App extends React.Component {
                     <Route path='/admin' component={LogoPic}/>
                     <Route path='/' component={LogoPicClient}/>
                     </Switch>)}
-
                 <div className='body'>
                     {isAuth && (
                         <Switch>
@@ -40,8 +49,8 @@ class App extends React.Component {
                     <div className='main__content'>
                         <Suspense fallback={<div>Spinner for loading a component</div>}>
                             <Switch>
-                                {isAuth ?this.renderRoutes(adminRoutes): this.renderRoutes(shopRoutes.rest)}
-                                {isAuth ? this.renderRoutes(shopRoutes.loggedIn) : this.renderRoutes(shopRoutes.rest)}
+                                {checkAuthAndRender()}
+                                {this.renderRoutes(shopRoutes.rest)}
                             </Switch>
                         </Suspense>
                     </div>
@@ -51,4 +60,4 @@ class App extends React.Component {
     }
 }
 
-export default connect(state => ({isAuth: state.auth.isAuth}), {})(App);
+export default connect(state => ({isAuth: state.auth.isAuth,isAdmin:state.auth.user.isAdmin}), {})(App);

@@ -7,8 +7,9 @@ class CategoriesContainer extends React.Component {
 
 
     render() {
-        return <Header logout={this.props.logout}/>
+
+        return <Header logout={this.props.logout} isAdmin={this.props.isAdmin}/>
     }
 }
 
-export default connect(null, {logout})(CategoriesContainer);
+export default connect(state=>({isAdmin:state.auth.user.isAdmin}), {logout})(CategoriesContainer);

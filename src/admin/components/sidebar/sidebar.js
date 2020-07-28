@@ -10,10 +10,10 @@ let Sidebar = () => {
                 <img className={sidebarCss.sidebarIcon} src={sidebarIcon} alt={"MENU"}/>
             </div>
             <nav className={sidebarCss.sidebarBody}>
-                <SidebarItem text="Категории" route="/categories"/>
-                <SidebarItem text="Продукты" route="/products"/>
-                <SidebarItem text="Пользователи" route="/users"/>
-                <SidebarItem text="Заказы" route="/orders"/>
+                <SidebarItem text="Категории" route="/admin/categories"/>
+                <SidebarItem text="Продукты" route="/admin/products"/>
+                <SidebarItem text="Пользователи" route="/admin/users"/>
+                <SidebarItem text="Заказы" route="/admin/orders"/>
             </nav>
 
         </div>
